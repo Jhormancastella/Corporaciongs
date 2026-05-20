@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Corporación Educativa General Santander - Sucursal Tibú. Técnicas Laborales por Competencias. Matrículas abiertas.">
-    <meta name="keywords" content="educación, técnico laboral, Tibú, Catatumbo, General Santander, formación, técnicas por competencias">
+    <meta name="description" content="Corporación Educativa General Santander - Sucursal Tibú. Técnicas Laborales por Competencias. Matrículas abiertas con becas hasta del 100%.">
+    <meta name="keywords" content="educación, técnico laboral, Tibú, Catatumbo, General Santander, formación, becas, descuentos">
     <meta property="og:title" content="Corporación Educativa General Santander - Sucursal Tibú">
     <meta property="og:description" content="Técnicas Laborales por Competencias. ¡Tu futuro, nuestra misión!">
-    <meta property="og:image" content="https://res.cloudinary.com/dipv76dpn/image/upload/v1778763244/b_Quiero_sacar_el_logo.png_m8hmqx.png">
-    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dipv76dpn/image/upload/v1778763244/b_Quiero_sacar_el_logo.png_m8hmqx.png">
+    <meta property="og:image" content="https://res.cloudinary.com/dipv76dpn/image/upload/v1779288734/b_Quiero_sacar_el_logo.png_2_ous6d0.jpg">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/dipv76dpn/image/upload/v1779288734/b_Quiero_sacar_el_logo.png_2_ous6d0.jpg">
     <title>Corporación Educativa General Santander - Sucursal Tibú</title>
     <style>
         :root {
@@ -22,6 +22,8 @@
             --purple-soft: #F5EBFB;
             --yellow: #FFD93D;
             --yellow-dark: #F4C430;
+            --green: #25D366;
+            --red: #E74C3C;
             --white: #FFFFFF;
             --dark: #1A0A2E;
             --text-dark: #2D1B4E;
@@ -30,6 +32,8 @@
             --gradient-light: linear-gradient(135deg, #D4B0F0 0%, #EDE0F7 100%);
             --gradient-hero: linear-gradient(160deg, #1A0838 0%, #2D0F50 30%, #4A1A8B 60%, #6B2FA0 100%);
             --gradient-yellow: linear-gradient(135deg, #FFD93D 0%, #F4C430 100%);
+            --gradient-green: linear-gradient(135deg, #25D366 0%, #1DA851 100%);
+            --gradient-red: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
             --shadow-sm: 0 2px 10px rgba(74, 26, 139, 0.1);
             --shadow-md: 0 8px 30px rgba(74, 26, 139, 0.15);
             --shadow-lg: 0 15px 50px rgba(74, 26, 139, 0.2);
@@ -54,7 +58,6 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--purple-pale); }
         ::-webkit-scrollbar-thumb { background: var(--purple-mid); border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--purple-main); }
 
         /* ===== NAVBAR ===== */
         .navbar {
@@ -191,10 +194,9 @@
         }
         .hero-logo img {
             width: 100%; height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.95);
-            padding: 8px;
             box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2), 0 0 60px rgba(139, 79, 196, 0.3);
         }
 
@@ -211,21 +213,6 @@
             text-transform: uppercase;
             animation: fadeInDown 1s ease-out 0.1s both;
             box-shadow: 0 4px 15px rgba(255, 217, 61, 0.3);
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 8px 22px;
-            border-radius: 50px;
-            color: var(--white);
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin-bottom: 18px;
-            letter-spacing: 0.5px;
-            animation: fadeInDown 1s ease-out 0.2s both;
         }
 
         .hero-title {
@@ -303,10 +290,14 @@
         .btn-secondary:hover { background: rgba(255, 255, 255, 0.15); border-color: var(--white); transform: translateY(-3px); }
         .btn-purple { background: var(--gradient-main); color: var(--white); box-shadow: var(--shadow-md); }
         .btn-purple:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
-        .btn-outline-purple { background: transparent; color: var(--purple-main); border: 2px solid var(--purple-mid); }
-        .btn-outline-purple:hover { background: var(--purple-main); color: var(--white); transform: translateY(-3px); }
         .btn-yellow { background: var(--gradient-yellow); color: var(--purple-dark); box-shadow: 0 4px 20px rgba(255, 217, 61, 0.4); }
         .btn-yellow:hover { transform: translateY(-3px); box-shadow: 0 8px 35px rgba(255, 217, 61, 0.5); }
+        .btn-green {
+            background: var(--gradient-green);
+            color: white;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+        }
+        .btn-green:hover { transform: translateY(-3px); box-shadow: 0 8px 35px rgba(37, 211, 102, 0.5); }
 
         .scroll-indicator {
             position: absolute;
@@ -328,23 +319,117 @@
         @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
         @keyframes scrollDown { 0% { top: 6px; opacity: 1; } 100% { top: 20px; opacity: 0; } }
 
-        /* ===== SECTIONS ===== */
-        .section { padding: 90px 0; }
-        .section-header { text-align: center; margin-bottom: 50px; padding: 0 15px; }
-        .section-label {
-            display: inline-block;
-            background: var(--gradient-light);
-            color: var(--purple-main);
-            padding: 6px 20px;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
+        /* ===== COUNTDOWN ===== */
+        .countdown-section {
+            background: linear-gradient(135deg, var(--red) 0%, #8B1A2E 100%);
+            padding: 35px 20px;
+            position: relative;
+            overflow: hidden;
+            color: white;
         }
-        .section-title { font-size: clamp(1.6rem, 4vw, 2.8rem); color: var(--purple-dark); font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
-        .section-subtitle { font-size: clamp(0.95rem, 2vw, 1.1rem); color: var(--text-gray); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+        .countdown-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z'/%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.4;
+        }
+        .countdown-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .countdown-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+        .countdown-icon {
+            font-size: 2rem;
+            animation: shake 1.5s ease-in-out infinite;
+        }
+        @keyframes shake {
+            0%, 100% { transform: rotate(0); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+        .countdown-title {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .countdown-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 22px;
+            font-weight: 500;
+        }
+        .countdown-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 22px;
+        }
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-md);
+            padding: 18px 12px;
+            min-width: 95px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .countdown-box:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .countdown-number {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            line-height: 1;
+            color: var(--yellow);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: block;
+        }
+        .countdown-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 6px;
+            opacity: 0.9;
+            font-weight: 600;
+        }
+        .countdown-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient-yellow);
+            color: var(--purple-dark);
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-decoration: none;
+            font-size: 0.92rem;
+            box-shadow: 0 6px 20px rgba(255, 217, 61, 0.4);
+            transition: all 0.3s;
+        }
+        .countdown-cta:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 217, 61, 0.5);
+        }
+        .countdown-expired {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--yellow);
+        }
 
         /* ===== ANNOUNCEMENT BANNER ===== */
         .announcement {
@@ -371,9 +456,225 @@
             20%, 40% { transform: rotate(15deg); }
         }
 
+        /* ===== SECTIONS ===== */
+        .section { padding: 90px 0; }
+        .section-header { text-align: center; margin-bottom: 50px; padding: 0 15px; }
+        .section-label {
+            display: inline-block;
+            background: var(--gradient-light);
+            color: var(--purple-main);
+            padding: 6px 20px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .section-title { font-size: clamp(1.6rem, 4vw, 2.8rem); color: var(--purple-dark); font-weight: 800; margin-bottom: 15px; line-height: 1.2; }
+        .section-subtitle { font-size: clamp(0.95rem, 2vw, 1.1rem); color: var(--text-gray); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+        /* ===== PROGRAMS ===== */
+        .programs { background: linear-gradient(180deg, var(--white) 0%, var(--purple-soft) 100%); overflow: hidden; padding: 90px 0; position: relative; }
+        .programs::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-main); }
+
+        .programs-hero-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .programs-hero-title .section-title {
+            background: var(--gradient-main);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .programs-hero-title .highlight-yellow {
+            display: inline-block;
+            background: var(--gradient-yellow);
+            color: var(--purple-dark);
+            padding: 2px 16px;
+            border-radius: 8px;
+            -webkit-text-fill-color: var(--purple-dark);
+        }
+
+        .programs-carousel-wrapper {
+            position: relative;
+            margin: 0 -20px;
+            padding: 20px 0 30px;
+            overflow: hidden;
+        }
+        .programs-carousel {
+            display: flex;
+            gap: 25px;
+            padding: 10px 20px;
+            animation: scrollPrograms 60s linear infinite;
+            width: max-content;
+        }
+        .programs-carousel:hover { animation-play-state: paused; }
+        @keyframes scrollPrograms { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 12.5px)); } }
+
+        .program-card {
+            flex-shrink: 0;
+            width: 310px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s;
+            border: 2px solid transparent;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .program-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--purple-lighter);
+        }
+
+        .program-image {
+            width: 100%;
+            height: 175px;
+            background: var(--gradient-main);
+            position: relative;
+            overflow: hidden;
+        }
+        .program-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .program-number {
+            position: absolute;
+            top: 12px; left: 12px;
+            width: 38px; height: 38px;
+            background: var(--gradient-yellow);
+            color: var(--purple-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 900;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 2;
+        }
+
+        .program-discount-tag {
+            position: absolute;
+            top: 12px; right: 12px;
+            background: var(--gradient-red);
+            color: white;
+            padding: 5px 11px;
+            border-radius: 20px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: pulseTag 2s ease-in-out infinite;
+        }
+        @keyframes pulseTag {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .program-icon-circle {
+            position: absolute;
+            bottom: -25px;
+            right: 20px;
+            width: 55px; height: 55px;
+            background: var(--gradient-main);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: white;
+            box-shadow: 0 6px 20px rgba(74, 26, 139, 0.4);
+            z-index: 2;
+            border: 3px solid white;
+        }
+
+        .program-body {
+            padding: 35px 22px 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .program-category {
+            font-size: 0.68rem;
+            color: var(--purple-main);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 8px;
+        }
+        .program-title {
+            font-size: 1.05rem;
+            color: var(--purple-dark);
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.3;
+            min-height: 2.7em;
+        }
+        .program-description {
+            font-size: 0.82rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+        .program-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            padding-bottom: 14px;
+            border-top: 1px solid var(--purple-pale);
+        }
+        .program-meta-item {
+            font-size: 0.74rem;
+            color: var(--text-gray);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-weight: 600;
+        }
+        .program-inscribe-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            background: var(--gradient-green);
+            color: white;
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+        .program-inscribe-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+        .program-inscribe-btn:active {
+            transform: translateY(0);
+        }
+
+        .programs-cta { text-align: center; margin-top: 35px; }
+        .programs-cta .btn { font-size: 1rem; padding: 14px 36px; }
+
         /* ===== ABOUT ===== */
         .about { background: var(--white); position: relative; }
-        .about::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--gradient-main); }
         .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         .about-card-main {
             background: var(--gradient-main);
@@ -410,7 +711,7 @@
         .feature-icon { width: 26px; height: 26px; background: var(--purple-main); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 0.75rem; flex-shrink: 0; margin-top: 2px; }
         .about-features li span { font-weight: 500; color: var(--text-dark); font-size: 0.9rem; line-height: 1.5; }
 
-        /* ===== GALLERY CAROUSEL ===== */
+        /* ===== GALLERY ===== */
         .gallery { background: var(--white); padding: 60px 0; overflow: hidden; }
         .gallery-carousel {
             position: relative;
@@ -480,235 +781,237 @@
         .value-card h4 { font-size: 1.05rem; color: var(--purple-dark); font-weight: 700; margin-bottom: 8px; }
         .value-card p { font-size: 0.82rem; color: var(--text-gray); line-height: 1.5; }
 
-        /* ===== PROGRAMS - TÉCNICAS LABORALES ===== */
-        .programs { background: linear-gradient(180deg, var(--white) 0%, var(--purple-soft) 100%); overflow: hidden; }
-
-        .programs-hero-title {
-            text-align: center;
-            margin-bottom: 50px;
+        /* ===== SCHOLARSHIPS / DESCUENTOS DESTACADOS ===== */
+        .scholarships {
+            background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple-main) 100%);
+            padding: 100px 0;
+            color: white;
+            position: relative;
+            overflow: hidden;
         }
-        .programs-hero-title .section-title {
-            background: var(--gradient-main);
+        .scholarships::before {
+            content: '';
+            position: absolute;
+            top: -30%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(255, 217, 61, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .scholarships::after {
+            content: '';
+            position: absolute;
+            bottom: -30%; left: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(139, 79, 196, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .scholarships .section-label {
+            background: var(--gradient-yellow);
+            color: var(--purple-dark);
+        }
+        .scholarships .section-title {
+            color: white;
+        }
+        .scholarships .section-title .yellow-text {
+            background: var(--gradient-yellow);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        .programs-hero-title .highlight-yellow {
-            display: inline-block;
-            background: var(--gradient-yellow);
-            color: var(--purple-dark);
-            padding: 2px 16px;
-            border-radius: 8px;
-            -webkit-text-fill-color: var(--purple-dark);
+        .scholarships .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        .programs-carousel-wrapper {
-            position: relative;
-            margin: 0 -20px;
-            padding: 20px 0 30px;
-            overflow: hidden;
-        }
-        .programs-carousel {
-            display: flex;
-            gap: 25px;
-            padding: 10px 20px;
-            animation: scrollPrograms 50s linear infinite;
-            width: max-content;
-        }
-        .programs-carousel:hover { animation-play-state: paused; }
-        @keyframes scrollPrograms { from { transform: translateX(0); } to { transform: translateX(calc(-50% - 12.5px)); } }
-
-        .program-card {
-            flex-shrink: 0;
-            width: 300px;
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: all 0.4s;
-            border: 2px solid transparent;
-            position: relative;
-        }
-        .program-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--purple-lighter);
-        }
-
-        .program-image {
-            width: 100%;
-            height: 180px;
-            background: var(--gradient-main);
-            position: relative;
-            overflow: hidden;
-        }
-        .program-image img { width: 100%; height: 100%; object-fit: cover; }
-
-        .program-number {
-            position: absolute;
-            top: 12px; left: 12px;
-            width: 38px; height: 38px;
-            background: var(--gradient-yellow);
-            color: var(--purple-dark);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            font-weight: 900;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            z-index: 2;
-        }
-
-        .program-icon-circle {
-            position: absolute;
-            bottom: -25px;
-            right: 20px;
-            width: 55px; height: 55px;
-            background: var(--gradient-main);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            color: white;
-            box-shadow: 0 6px 20px rgba(74, 26, 139, 0.4);
-            z-index: 2;
-            border: 3px solid white;
-        }
-
-        .program-body {
-            padding: 35px 22px 22px;
-        }
-        .program-category {
-            font-size: 0.68rem;
-            color: var(--purple-main);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            margin-bottom: 8px;
-        }
-        .program-title {
-            font-size: 1.05rem;
-            color: var(--purple-dark);
-            font-weight: 800;
-            margin-bottom: 10px;
-            line-height: 1.3;
-            min-height: 2.7em;
-        }
-        .program-description {
-            font-size: 0.82rem;
-            color: var(--text-gray);
-            line-height: 1.6;
-            margin-bottom: 15px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        .program-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 12px;
-            border-top: 1px solid var(--purple-pale);
-        }
-        .program-meta-item {
-            font-size: 0.74rem;
-            color: var(--text-gray);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-weight: 600;
-        }
-
-        .programs-cta { text-align: center; margin-top: 35px; }
-        .programs-cta .btn { font-size: 1rem; padding: 14px 36px; }
-
-        /* ===== ENROLLMENT INFO ===== */
-        .enrollment-info {
-            background: var(--white);
-            padding: 70px 0;
-        }
-        .enrollment-cards {
+        .scholarships-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 25px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 50px;
         }
-        .enroll-info-card {
-            background: var(--white);
+        .scholarship-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
             border-radius: var(--radius-lg);
-            padding: 30px 25px;
+            padding: 30px 22px;
             text-align: center;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s;
-            border-top: 5px solid var(--purple-main);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
         }
-        .enroll-info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+        .scholarship-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: var(--gradient-yellow);
+            transform: scaleX(0);
+            transition: transform 0.4s;
         }
-        .enroll-info-card.featured {
-            background: var(--gradient-main);
-            color: white;
-            border-top-color: var(--yellow);
-            transform: scale(1.05);
+        .scholarship-card:hover::before { transform: scaleX(1); }
+        .scholarship-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-8px);
+            border-color: var(--yellow);
         }
-        .enroll-info-card.featured:hover { transform: scale(1.05) translateY(-5px); }
-        .enroll-info-icon {
-            width: 60px; height: 60px;
-            background: var(--purple-pale);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 18px;
-            font-size: 1.8rem;
-        }
-        .enroll-info-card.featured .enroll-info-icon { background: rgba(255, 217, 61, 0.25); }
-        .enroll-info-card h4 {
-            font-size: 1rem;
+        .scholarship-card.premium {
+            background: var(--gradient-yellow);
             color: var(--purple-dark);
-            margin-bottom: 10px;
+            border-color: var(--yellow);
+            transform: scale(1.05);
+            box-shadow: 0 15px 50px rgba(255, 217, 61, 0.4);
+        }
+        .scholarship-card.premium:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+        .scholarship-card.premium::before {
+            background: var(--purple-main);
+        }
+        .scholarship-badge-top {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-red);
+            color: white;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.68rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
+            white-space: nowrap;
+        }
+        .scholarship-percent {
+            font-size: 3.5rem;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 8px;
+            background: var(--gradient-yellow);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .scholarship-card.premium .scholarship-percent {
+            background: linear-gradient(135deg, var(--purple-dark), var(--purple-main));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .scholarship-label {
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-bottom: 12px;
+            opacity: 0.95;
         }
-        .enroll-info-card.featured h4 { color: var(--yellow); }
-        .enroll-info-card .big-value {
-            font-size: 2.5rem;
+        .scholarship-description {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+        .scholarship-card.premium .scholarship-description { opacity: 1; font-weight: 500; }
+
+        /* How to apply */
+        .scholarship-how-to {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-lg);
+            padding: 40px 35px;
+            position: relative;
+            z-index: 2;
+        }
+        .scholarship-how-to h3 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+        .scholarship-how-to h3 .icon {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+        .apply-step {
+            text-align: center;
+            position: relative;
+        }
+        .apply-step-number {
+            width: 50px; height: 50px;
+            background: var(--gradient-yellow);
+            color: var(--purple-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
             font-weight: 900;
-            color: var(--purple-main);
-            line-height: 1;
-            margin: 10px 0;
+            margin: 0 auto 14px;
+            box-shadow: 0 4px 15px rgba(255, 217, 61, 0.4);
         }
-        .enroll-info-card.featured .big-value {
+        .apply-step h4 {
+            font-size: 0.92rem;
+            margin-bottom: 6px;
             color: var(--yellow);
-            font-size: 3rem;
         }
-        .enroll-info-card p {
-            font-size: 0.88rem;
-            color: var(--text-gray);
+        .apply-step p {
+            font-size: 0.82rem;
+            opacity: 0.85;
             line-height: 1.5;
         }
-        .enroll-info-card.featured p { color: rgba(255,255,255,0.95); }
-        .scholarship-badges {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-top: 12px;
+        .scholarship-cta-area {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 2px dashed rgba(255, 255, 255, 0.2);
         }
-        .scholarship-badge {
-            background: var(--gradient-main);
-            color: white;
-            padding: 8px 14px;
-            border-radius: 25px;
-            font-size: 0.78rem;
-            font-weight: 800;
-            display: inline-flex;
+        .scholarship-cta-area p {
+            margin-bottom: 18px;
+            font-size: 0.92rem;
+            opacity: 0.9;
+        }
+        .scholarship-requirements {
+            background: rgba(255, 217, 61, 0.1);
+            border: 1px solid rgba(255, 217, 61, 0.3);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        .scholarship-requirements h4 {
+            color: var(--yellow);
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 8px;
+        }
+        .scholarship-requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+        .scholarship-requirements li {
+            padding: 6px 0;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            opacity: 0.9;
+        }
+        .scholarship-requirements li::before {
+            content: '✓';
+            color: var(--yellow);
+            font-weight: 800;
+            flex-shrink: 0;
         }
 
         /* ===== ENROLL STEPS ===== */
@@ -912,7 +1215,7 @@
         }
         .faq-item.active .faq-toggle { background: var(--purple-main); color: var(--white); transform: rotate(45deg); }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; }
-        .faq-item.active .faq-answer { max-height: 400px; padding: 0 25px 22px; }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 0 25px 22px; }
         .faq-answer p { color: var(--text-gray); line-height: 1.7; font-size: 0.92rem; }
 
         /* ===== CTA ===== */
@@ -1016,7 +1319,7 @@
         @media (min-width: 768px) { .whatsapp-bubble { display: block; } }
         .whatsapp-btn {
             width: 58px; height: 58px;
-            background: #25D366;
+            background: var(--green);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1067,26 +1370,26 @@
         .back-to-top.visible { opacity: 1; visibility: visible; }
         .back-to-top:hover { background: var(--purple-dark); transform: translateY(-3px); }
 
-        /* =====================================================
-           ===== RESPONSIVE - MEJORAS MOBILE COMPLETAS =====
-           ===================================================== */
+        /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .about-grid { grid-template-columns: 1fr; gap: 50px; }
             .enroll-steps { grid-template-columns: repeat(2, 1fr); gap: 35px; }
             .step-card:not(:last-child)::after { display: none; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
-            .enrollment-cards { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
-            .enroll-info-card.featured { transform: scale(1); }
-            .enroll-info-card.featured:hover { transform: translateY(-5px); }
             .benefits-grid { grid-template-columns: 1fr; gap: 18px; }
+            .scholarships-grid { grid-template-columns: repeat(2, 1fr); }
+            .scholarship-card.premium { transform: scale(1); }
+            .scholarship-card.premium:hover { transform: translateY(-8px); }
+            .steps-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
             .container { padding: 0 18px; }
             .section { padding: 65px 0; }
             .section-header { margin-bottom: 40px; padding: 0 10px; }
+            .programs { padding: 65px 0; }
+            .scholarships { padding: 70px 0; }
 
-            /* Navbar */
             .hamburger { display: flex; }
             .nav-brand { gap: 10px; }
             .nav-brand-text { max-width: 170px; }
@@ -1120,11 +1423,9 @@
             .mobile-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); z-index: 999; }
             .mobile-overlay.active { display: block; }
 
-            /* Hero */
             .hero { padding: 100px 18px 70px; min-height: auto; }
             .hero-logo { width: 110px; height: 110px; margin-bottom: 22px; }
             .hero-resolution { font-size: 0.65rem; padding: 6px 14px; margin-bottom: 14px; }
-            .hero-badge { font-size: 0.72rem; padding: 7px 18px; margin-bottom: 16px; }
             .hero-title { margin-bottom: 14px; }
             .hero-mission { margin: 18px 0; padding: 0 10px; }
             .hero-slogan { padding: 0 10px; }
@@ -1132,10 +1433,12 @@
             .hero-buttons { gap: 12px; padding: 0 10px; }
             .scroll-indicator { bottom: 20px; }
 
-            /* Announcement */
+            .countdown-section { padding: 28px 18px; }
+            .countdown-box { min-width: 78px; padding: 14px 8px; }
+            .countdown-grid { gap: 10px; }
+
             .announcement { font-size: 0.82rem; padding: 12px 15px; }
 
-            /* About */
             .about-card-main { padding: 32px 24px; }
             .about-card-main h3 { font-size: 1.35rem; }
             .about-stats { gap: 14px; }
@@ -1144,68 +1447,58 @@
             .stat-number { font-size: 1.4rem; }
             .stat-label { font-size: 0.7rem; }
 
-            /* Values */
             .values-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
             .value-card { padding: 28px 18px; }
             .value-emoji { font-size: 2.2rem; }
 
-            /* Programs */
-            .program-card { width: 270px; }
+            .program-card { width: 280px; }
             .programs-carousel { gap: 18px; }
             .program-image { height: 160px; }
             .program-body { padding: 32px 20px 20px; }
             .program-title { font-size: 1rem; min-height: 2.6em; }
             .program-icon-circle { width: 50px; height: 50px; font-size: 1.4rem; right: 16px; bottom: -22px; }
             .program-number { width: 34px; height: 34px; font-size: 1rem; }
+            .program-discount-tag { font-size: 0.62rem; padding: 4px 9px; }
 
-            /* Gallery */
             .gallery-item { width: 270px; height: 190px; }
             .gallery-track { gap: 15px; }
 
-            /* Enrollment cards */
-            .enrollment-info { padding: 55px 0; }
-            .enroll-info-card { padding: 28px 22px; }
-            .enroll-info-card .big-value { font-size: 2.2rem; }
-            .enroll-info-card.featured .big-value { font-size: 2.6rem; }
-            .scholarship-badge { font-size: 0.74rem; padding: 7px 12px; }
+            .scholarships-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+            .scholarship-card { padding: 25px 18px; }
+            .scholarship-percent { font-size: 2.8rem; }
+            .scholarship-how-to { padding: 30px 22px; }
+            .steps-grid { grid-template-columns: 1fr 1fr; gap: 18px; }
+            .scholarship-how-to h3 { font-size: 1.25rem; }
 
-            /* Benefits */
             .benefits { padding: 50px 0; }
             .benefit-item { padding: 16px; }
             .benefit-check { width: 44px; height: 44px; font-size: 1.2rem; }
             .benefit-item h4 { font-size: 0.95rem; }
             .benefit-item p { font-size: 0.8rem; }
 
-            /* Enroll steps */
             .enroll-steps { grid-template-columns: 1fr; gap: 28px; margin-bottom: 40px; }
             .step-number { width: 55px; height: 55px; font-size: 1.4rem; }
 
-            /* Contact */
             .contact-grid { grid-template-columns: 1fr; gap: 18px; }
             .contact-card { padding: 30px 22px; }
             .map-container { height: 280px; margin-top: 35px; }
 
-            /* Certification */
             .cert-banner { padding: 30px 20px; gap: 25px; }
             .cert-divider { display: none; }
             .cert-item { flex: 1 1 calc(50% - 15px); min-width: 130px; }
 
-            /* Footer */
             .footer { padding: 50px 0 25px; }
             .footer-grid { grid-template-columns: 1fr; gap: 35px; margin-bottom: 30px; }
             .footer-bottom { flex-direction: column; text-align: center; gap: 15px; }
             .footer-bottom-links { justify-content: center; }
 
-            /* CTA */
             .cta-section { padding: 55px 0; }
             .cta-box { padding: 42px 24px; }
 
-            /* Floating */
             .whatsapp-btn { width: 54px; height: 54px; font-size: 1.5rem; }
             .whatsapp-float { bottom: 18px; right: 18px; }
             .back-to-top { bottom: 18px; left: 18px; width: 42px; height: 42px; }
 
-            /* FAQ */
             .faq-question { padding: 18px 20px; font-size: 0.9rem; }
             .faq-item.active .faq-answer { padding: 0 20px 20px; }
         }
@@ -1213,22 +1506,21 @@
         @media (max-width: 480px) {
             .container { padding: 0 15px; }
             .section { padding: 50px 0; }
+            .programs { padding: 50px 0; }
+            .scholarships { padding: 55px 0; }
             .section-header { margin-bottom: 32px; }
             .section-title { font-size: 1.5rem; }
             .section-subtitle { font-size: 0.88rem; }
 
-            /* Navbar */
             .navbar { padding: 12px 0; }
             .nav-brand-text { max-width: 130px; }
             .nav-brand-name { font-size: 0.72rem; }
             .nav-brand-branch { font-size: 0.55rem; }
             .nav-logo { width: 38px; height: 38px; }
 
-            /* Hero */
             .hero { padding: 95px 15px 60px; }
             .hero-logo { width: 95px; height: 95px; margin-bottom: 18px; }
             .hero-resolution { font-size: 0.6rem; padding: 5px 12px; letter-spacing: 0.5px; }
-            .hero-badge { font-size: 0.68rem; padding: 6px 14px; }
             .hero-title { line-height: 1.2; margin-bottom: 12px; }
             .hero-title-main { font-size: 1.5rem; }
             .hero-title-highlight { font-size: 1.75rem; }
@@ -1238,11 +1530,20 @@
             .hero-buttons { flex-direction: column; align-items: stretch; padding: 0 20px; gap: 10px; }
             .btn { width: 100%; padding: 13px 22px; font-size: 0.9rem; }
 
-            /* Announcement */
+            .countdown-section { padding: 24px 15px; }
+            .countdown-header { gap: 8px; margin-bottom: 14px; }
+            .countdown-icon { font-size: 1.6rem; }
+            .countdown-title { font-size: 1rem; }
+            .countdown-subtitle { font-size: 0.8rem; margin-bottom: 18px; }
+            .countdown-grid { gap: 8px; }
+            .countdown-box { min-width: 68px; padding: 12px 6px; border-radius: 12px; }
+            .countdown-number { font-size: 1.7rem; }
+            .countdown-label { font-size: 0.62rem; margin-top: 4px; }
+            .countdown-cta { font-size: 0.82rem; padding: 11px 22px; }
+
             .announcement { font-size: 0.75rem; padding: 11px 12px; }
             .announcement-content { gap: 6px; }
 
-            /* About */
             .about-grid { gap: 40px; }
             .about-card-main { padding: 28px 20px; }
             .about-card-main h3 { font-size: 1.2rem; margin-bottom: 14px; }
@@ -1258,19 +1559,16 @@
             .about-features li span { font-size: 0.82rem; }
             .feature-icon { width: 24px; height: 24px; font-size: 0.7rem; }
 
-            /* Gallery */
             .gallery { padding: 45px 0; }
             .gallery-item { width: 230px; height: 170px; }
 
-            /* Values */
             .values-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
             .value-card { padding: 22px 14px; }
             .value-emoji { font-size: 2rem; margin-bottom: 10px; }
             .value-card h4 { font-size: 0.95rem; }
             .value-card p { font-size: 0.75rem; }
 
-            /* Programs */
-            .program-card { width: 250px; }
+            .program-card { width: 260px; }
             .programs-carousel { gap: 15px; }
             .program-image { height: 145px; }
             .program-number { width: 32px; height: 32px; font-size: 0.95rem; top: 10px; left: 10px; }
@@ -1280,51 +1578,45 @@
             .program-title { font-size: 0.95rem; min-height: 2.5em; }
             .program-description { font-size: 0.78rem; }
             .program-meta-item { font-size: 0.7rem; }
+            .program-inscribe-btn { padding: 11px 14px; font-size: 0.82rem; }
 
-            /* Enrollment */
-            .enrollment-info { padding: 45px 0; }
-            .enroll-info-card { padding: 25px 20px; }
-            .enroll-info-card h4 { font-size: 0.88rem; }
-            .enroll-info-card .big-value { font-size: 1.9rem; }
-            .enroll-info-card.featured .big-value { font-size: 2.3rem; }
-            .enroll-info-card p { font-size: 0.82rem; }
-            .scholarship-badges { gap: 6px; }
-            .scholarship-badge { font-size: 0.7rem; padding: 6px 10px; }
+            .scholarships-grid { grid-template-columns: 1fr; gap: 18px; max-width: 320px; margin: 0 auto 40px; }
+            .scholarship-card { padding: 28px 22px; }
+            .scholarship-percent { font-size: 3rem; }
+            .scholarship-how-to { padding: 28px 20px; }
+            .scholarship-how-to h3 { font-size: 1.15rem; margin-bottom: 24px; }
+            .steps-grid { grid-template-columns: 1fr; gap: 20px; }
+            .scholarship-requirements { padding: 18px; }
+            .scholarship-requirements h4 { font-size: 0.9rem; }
+            .scholarship-requirements li { font-size: 0.8rem; }
 
-            /* Benefits */
             .benefits { padding: 40px 0; }
             .benefit-item { padding: 14px; gap: 12px; }
             .benefit-check { width: 40px; height: 40px; font-size: 1.1rem; }
             .benefit-item h4 { font-size: 0.9rem; }
             .benefit-item p { font-size: 0.75rem; }
 
-            /* Steps */
             .step-card { padding: 0; }
             .step-number { width: 50px; height: 50px; font-size: 1.3rem; margin-bottom: 14px; }
             .step-card h4 { font-size: 0.92rem; }
             .step-card p { font-size: 0.8rem; }
 
-            /* Cert */
             .cert-banner { padding: 22px 16px; gap: 18px; }
             .cert-item { flex: 1 1 100%; }
             .cert-item .value { font-size: 0.9rem; }
 
-            /* Contact */
             .contact-card { padding: 26px 18px; }
             .contact-card h4 { font-size: 0.98rem; }
             .contact-card p { font-size: 0.85rem; }
 
-            /* CTA */
             .cta-section { padding: 50px 0; }
             .cta-box { padding: 35px 20px; border-radius: var(--radius-lg); }
 
-            /* FAQ */
             .faq-question { padding: 16px 18px; font-size: 0.85rem; gap: 12px; }
             .faq-toggle { width: 26px; height: 26px; font-size: 1rem; }
             .faq-item.active .faq-answer { padding: 0 18px 18px; }
             .faq-answer p { font-size: 0.85rem; }
 
-            /* Footer */
             .footer { padding: 42px 0 22px; }
             .footer-brand-header { flex-direction: row; gap: 12px; }
             .footer-brand h3 { font-size: 0.92rem; }
@@ -1335,11 +1627,9 @@
             .footer-bottom p { font-size: 0.75rem; }
             .footer-bottom-links a { font-size: 0.75rem; }
 
-            /* Floating */
             .whatsapp-btn { width: 50px; height: 50px; font-size: 1.4rem; }
             .back-to-top { width: 40px; height: 40px; font-size: 1.1rem; }
 
-            /* Map */
             .map-container { height: 240px; margin-top: 30px; }
         }
 
@@ -1350,15 +1640,17 @@
             .nav-brand-text { display: none; }
             .about-stats { grid-template-columns: 1fr; }
             .values-grid { grid-template-columns: 1fr; }
-            .program-card { width: 230px; }
+            .program-card { width: 240px; }
             .cert-banner { padding: 18px 14px; }
+            .countdown-box { min-width: 60px; padding: 10px 4px; }
+            .countdown-number { font-size: 1.5rem; }
+            .countdown-label { font-size: 0.58rem; }
         }
 
-        /* Disable hover on touch */
         @media (hover: none) {
             .program-card:hover, .gallery-item:hover, .value-card:hover,
-            .stat-card:hover, .enroll-info-card:hover, .contact-card:hover,
-            .about-features li:hover, .benefit-item:hover {
+            .stat-card:hover, .scholarship-card:hover, .contact-card:hover,
+            .about-features li:hover, .benefit-item:hover, .countdown-box:hover {
                 transform: none;
             }
         }
@@ -1369,11 +1661,11 @@
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
     <!-- Navbar -->
-    <nav class="navbar" id="navbar" role="navigation">
+    <nav class="navbar" id="navbar">
         <div class="container">
             <a href="#inicio" class="nav-brand">
                 <div class="nav-logo">
-                    <img src="https://res.cloudinary.com/dipv76dpn/image/upload/v1778763244/b_Quiero_sacar_el_logo.png_m8hmqx.png" alt="Logo" width="48" height="48" loading="eager">
+                    <img src="https://res.cloudinary.com/dipv76dpn/image/upload/v1779288734/b_Quiero_sacar_el_logo.png_2_ous6d0.jpg" alt="Logo" width="48" height="48" loading="eager">
                 </div>
                 <div class="nav-brand-text">
                     <span class="nav-brand-name">General Santander</span>
@@ -1382,11 +1674,11 @@
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#programas">Programas</a></li>
-                <li><a href="#matriculas">Matrículas</a></li>
+                <li><a href="#becas">Becas</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#contacto">Contacto</a></li>
-                <li><a href="#matriculas" class="nav-cta">¡Inscríbete!</a></li>
+                <li><a href="#becas" class="nav-cta">¡Inscríbete!</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Menú" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -1407,7 +1699,7 @@
 
         <div class="hero-content">
             <div class="hero-logo">
-                <img src="https://res.cloudinary.com/dipv76dpn/image/upload/v1778763244/b_Quiero_sacar_el_logo.png_m8hmqx.png" alt="Logo" width="160" height="160" loading="eager">
+                <img src="https://res.cloudinary.com/dipv76dpn/image/upload/v1779288734/b_Quiero_sacar_el_logo.png_2_ous6d0.jpg" alt="Logo Corporación Educativa General Santander" width="160" height="160" loading="eager">
             </div>
             <div class="hero-resolution">📜 Res. 005730 · Secretaría de Educación</div>
             <h1 class="hero-title">
@@ -1418,12 +1710,44 @@
             <p class="hero-slogan">Educación para el Trabajo y el Desarrollo Humano</p>
             <p class="hero-sub-slogan">"Educación y Progreso para el Catatumbo"</p>
             <div class="hero-buttons">
-                <a href="#matriculas" class="btn btn-primary">🎓 Inscríbete Ahora</a>
+                <a href="#becas" class="btn btn-primary">🎓 Ver Becas</a>
                 <a href="#programas" class="btn btn-secondary">📋 Ver Programas</a>
             </div>
         </div>
         <div class="scroll-indicator">
-            <a href="#nosotros"><div class="scroll-arrow"></div>Descubre más</a>
+            <a href="#countdown"><div class="scroll-arrow"></div>Descubre más</a>
+        </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown-section" id="countdown">
+        <div class="countdown-container">
+            <div class="countdown-header">
+                <span class="countdown-icon">⏰</span>
+                <h2 class="countdown-title">¡Las Matrículas Cierran Pronto!</h2>
+            </div>
+            <p class="countdown-subtitle">Aprovecha las becas antes que se acaben · Cierre: 20 de mayo</p>
+            <div class="countdown-grid" id="countdownGrid">
+                <div class="countdown-box">
+                    <span class="countdown-number" id="cdDays">00</span>
+                    <div class="countdown-label">Días</div>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-number" id="cdHours">00</span>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-number" id="cdMinutes">00</span>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-box">
+                    <span class="countdown-number" id="cdSeconds">00</span>
+                    <div class="countdown-label">Segundos</div>
+                </div>
+            </div>
+            <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20antes%20del%20cierre%20de%20matr%C3%ADculas" class="countdown-cta" target="_blank" rel="noopener">
+                💬 Inscribirme Ahora por WhatsApp →
+            </a>
         </div>
     </section>
 
@@ -1434,6 +1758,374 @@
             <span>¡MATRÍCULAS ABIERTAS! Del 2 al 20 de Mayo · Becas hasta del 100%</span>
         </div>
     </div>
+
+    <!-- Programs -->
+    <section class="programs" id="programas">
+        <div class="container">
+            <div class="section-header programs-hero-title reveal">
+                <span class="section-label">Oferta Académica</span>
+                <h2 class="section-title">Técnicas Laborales <span class="highlight-yellow">Por Competencias</span></h2>
+                <p class="section-subtitle">Inscríbete directamente en el programa que elijas. ¡Becas disponibles!</p>
+            </div>
+        </div>
+
+        <div class="programs-carousel-wrapper reveal">
+            <div class="programs-carousel" id="programsCarousel">
+
+                <!-- 1. Auxiliar Administrativo -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Auxiliar Administrativo" loading="lazy">
+                        <span class="program-number">1</span>
+                        <span class="program-discount-tag">🔥 -70%</span>
+                        <div class="program-icon-circle">📋</div>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-category">Administración</div>
+                        <h3 class="program-title">Auxiliar Administrativo</h3>
+                        <p class="program-description">Gestión documental, atención al cliente y manejo de oficina moderna.</p>
+                        <div class="program-meta">
+                            <span class="program-meta-item">⏱️ Técnica</span>
+                            <span class="program-meta-item">🎓 Certificado</span>
+                        </div>
+                        <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Auxiliar%20Administrativo*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Necesito%20informaci%C3%B3n%20sobre%20requisitos%2C%20costos%20y%20becas%20disponibles." class="program-inscribe-btn" target="_blank" rel="noopener">
+                            💬 Inscribirme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. Auxiliar Contable y Financiero -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Auxiliar Contable" loading="lazy">
+                        <span class="program-number">2</span>
+                        <span class="program-discount-tag">🔥 -70%</span>
+                        <div class="program-icon-circle">📊</div>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-category">Finanzas</div>
+                        <h3 class="program-title">Auxiliar Contable y Financiero</h3>
+                        <p class="program-description">Contabilidad, nómina, tributación y software contable.</p>
+                        <div class="program-meta">
+                            <span class="program-meta-item">⏱️ Técnica</span>
+                            <span class="program-meta-item">🎓 Certificado</span>
+                        </div>
+                        <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Auxiliar%20Contable%20y%20Financiero*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Necesito%20informaci%C3%B3n%20sobre%20requisitos%2C%20costos%20y%20becas%20disponibles." class="program-inscribe-btn" target="_blank" rel="noopener">
+                            💬 Inscribirme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. Atención Primera Infancia -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1587653263995-422546a7a569?w=600&q=80" alt="Primera Infancia" loading="lazy">
+                        <span class="program-number">3</span>
+                        <span class="program-discount-tag">🔥 -70%</span>
+                        <div class="program-icon-circle">👶</div>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-category">Educación</div>
+                        <h3 class="program-title">Atención a la Primera Infancia</h3>
+                        <p class="program-description">Cuidado, educación y desarrollo integral en niños menores.</p>
+                        <div class="program-meta">
+                            <span class="program-meta-item">⏱️ Técnica</span>
+                            <span class="program-meta-item">🎓 Certificado</span>
+                        </div>
+                        <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Atenci%C3%B3n%20a%20la%20Primera%20Infancia*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Necesito%20informaci%C3%B3n%20sobre%20requisitos%2C%20costos%20y%20becas%20disponibles." class="program-inscribe-btn" target="_blank" rel="noopener">
+                            💬 Inscribirme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. Salud Ocupacional -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80" alt="Salud Ocupacional" loading="lazy">
+                        <span class="program-number">4</span>
+                        <span class="program-discount-tag">🔥 -70%</span>
+                        <div class="program-icon-circle">⛑️</div>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-category">SG-SST</div>
+                        <h3 class="program-title">Salud Ocupacional</h3>
+                        <p class="program-description">Sistema de gestión de seguridad y salud en el trabajo.</p>
+                        <div class="program-meta">
+                            <span class="program-meta-item">⏱️ Técnica</span>
+                            <span class="program-meta-item">🎓 Certificado</span>
+                        </div>
+                        <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Salud%20Ocupacional*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Necesito%20informaci%C3%B3n%20sobre%20requisitos%2C%20costos%20y%20becas%20disponibles." class="program-inscribe-btn" target="_blank" rel="noopener">
+                            💬 Inscribirme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. Belleza Integral -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Belleza Integral" loading="lazy">
+                        <span class="program-number">5</span>
+                        <span class="program-discount-tag">🔥 -70%</span>
+                        <div class="program-icon-circle">💇</div>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-category">Belleza</div>
+                        <h3 class="program-title">Belleza Integral</h3>
+                        <p class="program-description">Estética facial, corporal, peluquería y maquillaje profesional.</p>
+                        <div class="program-meta">
+                            <span class="program-meta-item">⏱️ Técnica</span>
+                            <span class="program-meta-item">🎓 Certificado</span>
+                        </div>
+                        <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Belleza%20Integral*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Necesito%20informaci%C3%B3n%20sobre%20requisitos%2C%20costos%20y%20becas%20disponibles." class="program-inscribe-btn" target="_blank" rel="noopener">
+                            💬 Inscribirme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. Servicios Farmacéuticos -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?w=600&q=80" alt="Servicios Farmacéuticos" loading="lazy">
+                        <span class="program-number">6</span>
+                        <span class="program-discount-tag">🔥 -70%</span>
+                        <div class="program-icon-circle">💊</div>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-category">Salud</div>
+                        <h3 class="program-title">Servicios Farmacéuticos</h3>
+                        <p class="program-description">Dispensación de medicamentos y atención farmacéutica integral.</p>
+                        <div class="program-meta">
+                            <span class="program-meta-item">⏱️ Técnica</span>
+                            <span class="program-meta-item">🎓 Certificado</span>
+                        </div>
+                        <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Servicios%20Farmac%C3%A9uticos*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Necesito%20informaci%C3%B3n%20sobre%20requisitos%2C%20costos%20y%20becas%20disponibles." class="program-inscribe-btn" target="_blank" rel="noopener">
+                            💬 Inscribirme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 7. Auxiliar en Enfermería -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="Enfermería" loading="lazy">
+                        <span class="program-number">7</span>
+                        <span class="program-discount-tag">🔥 -70%</span>
+                        <div class="program-icon-circle">💉</div>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-category">Salud</div>
+                        <h3 class="program-title">Auxiliar en Enfermería</h3>
+                        <p class="program-description">Cuidado del paciente, primeros auxilios y atención clínica.</p>
+                        <div class="program-meta">
+                            <span class="program-meta-item">⏱️ Técnica</span>
+                            <span class="program-meta-item">🎓 Certificado</span>
+                        </div>
+                        <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Auxiliar%20en%20Enfermer%C3%ADa*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Necesito%20informaci%C3%B3n%20sobre%20requisitos%2C%20costos%20y%20becas%20disponibles." class="program-inscribe-btn" target="_blank" rel="noopener">
+                            💬 Inscribirme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 8. Trabajo Social y Comunitario -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="Trabajo Social" loading="lazy">
+                        <span class="program-number">8</span>
+                        <span class="program-discount-tag">🔥 -70%</span>
+                        <div class="program-icon-circle">👥</div>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-category">Social</div>
+                        <h3 class="program-title">Auxiliar en Trabajo Social y Comunitario</h3>
+                        <p class="program-description">Intervención social, comunitaria y proyectos de impacto.</p>
+                        <div class="program-meta">
+                            <span class="program-meta-item">⏱️ Técnica</span>
+                            <span class="program-meta-item">🎓 Certificado</span>
+                        </div>
+                        <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Auxiliar%20en%20Trabajo%20Social%20y%20Comunitario*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Necesito%20informaci%C3%B3n%20sobre%20requisitos%2C%20costos%20y%20becas%20disponibles." class="program-inscribe-btn" target="_blank" rel="noopener">
+                            💬 Inscribirme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 9. Maquinaria Pesada -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=600&q=80" alt="Maquinaria Pesada" loading="lazy">
+                        <span class="program-number">9</span>
+                        <span class="program-discount-tag">🔥 -70%</span>
+                        <div class="program-icon-circle">🚜</div>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-category">Industrial</div>
+                        <h3 class="program-title">Maquinaria Pesada</h3>
+                        <p class="program-description">Operación de retroexcavadoras, bulldozers y equipos pesados.</p>
+                        <div class="program-meta">
+                            <span class="program-meta-item">⏱️ Técnica</span>
+                            <span class="program-meta-item">🎓 Certificado</span>
+                        </div>
+                        <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Maquinaria%20Pesada*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Necesito%20informaci%C3%B3n%20sobre%20requisitos%2C%20costos%20y%20becas%20disponibles." class="program-inscribe-btn" target="_blank" rel="noopener">
+                            💬 Inscribirme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 10. Bachillerato Flexible -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" alt="Bachillerato Flexible" loading="lazy">
+                        <span class="program-number">10</span>
+                        <span class="program-discount-tag">🔥 -70%</span>
+                        <div class="program-icon-circle">🎓</div>
+                    </div>
+                    <div class="program-body">
+                        <div class="program-category">Educación Básica</div>
+                        <h3 class="program-title">Bachillerato Flexible</h3>
+                        <p class="program-description">Termina tu bachillerato con horarios adaptables a tu vida.</p>
+                        <div class="program-meta">
+                            <span class="program-meta-item">⏱️ Flexible</span>
+                            <span class="program-meta-item">🎓 Diploma</span>
+                        </div>
+                        <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Bachillerato%20Flexible*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Necesito%20informaci%C3%B3n%20sobre%20requisitos%2C%20costos%20y%20becas%20disponibles." class="program-inscribe-btn" target="_blank" rel="noopener">
+                            💬 Inscribirme
+                        </a>
+                    </div>
+                </div>
+
+                <!-- DUPLICATES -->
+                <div class="program-card">
+                    <div class="program-image"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="" loading="lazy"><span class="program-number">1</span><span class="program-discount-tag">🔥 -70%</span><div class="program-icon-circle">📋</div></div>
+                    <div class="program-body"><div class="program-category">Administración</div><h3 class="program-title">Auxiliar Administrativo</h3><p class="program-description">Gestión documental, atención al cliente y manejo de oficina moderna.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div><a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Auxiliar%20Administrativo*" class="program-inscribe-btn" target="_blank" rel="noopener">💬 Inscribirme</a></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="" loading="lazy"><span class="program-number">2</span><span class="program-discount-tag">🔥 -70%</span><div class="program-icon-circle">📊</div></div>
+                    <div class="program-body"><div class="program-category">Finanzas</div><h3 class="program-title">Auxiliar Contable y Financiero</h3><p class="program-description">Contabilidad, nómina, tributación y software contable.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div><a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Auxiliar%20Contable%20y%20Financiero*" class="program-inscribe-btn" target="_blank" rel="noopener">💬 Inscribirme</a></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image"><img src="https://images.unsplash.com/photo-1587653263995-422546a7a569?w=600&q=80" alt="" loading="lazy"><span class="program-number">3</span><span class="program-discount-tag">🔥 -70%</span><div class="program-icon-circle">👶</div></div>
+                    <div class="program-body"><div class="program-category">Educación</div><h3 class="program-title">Atención a la Primera Infancia</h3><p class="program-description">Cuidado, educación y desarrollo integral en niños menores.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div><a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Atenci%C3%B3n%20a%20la%20Primera%20Infancia*" class="program-inscribe-btn" target="_blank" rel="noopener">💬 Inscribirme</a></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image"><img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80" alt="" loading="lazy"><span class="program-number">4</span><span class="program-discount-tag">🔥 -70%</span><div class="program-icon-circle">⛑️</div></div>
+                    <div class="program-body"><div class="program-category">SG-SST</div><h3 class="program-title">Salud Ocupacional</h3><p class="program-description">Sistema de gestión de seguridad y salud en el trabajo.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div><a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Salud%20Ocupacional*" class="program-inscribe-btn" target="_blank" rel="noopener">💬 Inscribirme</a></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="" loading="lazy"><span class="program-number">5</span><span class="program-discount-tag">🔥 -70%</span><div class="program-icon-circle">💇</div></div>
+                    <div class="program-body"><div class="program-category">Belleza</div><h3 class="program-title">Belleza Integral</h3><p class="program-description">Estética facial, corporal, peluquería y maquillaje profesional.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div><a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Belleza%20Integral*" class="program-inscribe-btn" target="_blank" rel="noopener">💬 Inscribirme</a></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image"><img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?w=600&q=80" alt="" loading="lazy"><span class="program-number">6</span><span class="program-discount-tag">🔥 -70%</span><div class="program-icon-circle">💊</div></div>
+                    <div class="program-body"><div class="program-category">Salud</div><h3 class="program-title">Servicios Farmacéuticos</h3><p class="program-description">Dispensación de medicamentos y atención farmacéutica integral.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div><a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Servicios%20Farmac%C3%A9uticos*" class="program-inscribe-btn" target="_blank" rel="noopener">💬 Inscribirme</a></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image"><img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="" loading="lazy"><span class="program-number">7</span><span class="program-discount-tag">🔥 -70%</span><div class="program-icon-circle">💉</div></div>
+                    <div class="program-body"><div class="program-category">Salud</div><h3 class="program-title">Auxiliar en Enfermería</h3><p class="program-description">Cuidado del paciente, primeros auxilios y atención clínica.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div><a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Auxiliar%20en%20Enfermer%C3%ADa*" class="program-inscribe-btn" target="_blank" rel="noopener">💬 Inscribirme</a></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="" loading="lazy"><span class="program-number">8</span><span class="program-discount-tag">🔥 -70%</span><div class="program-icon-circle">👥</div></div>
+                    <div class="program-body"><div class="program-category">Social</div><h3 class="program-title">Auxiliar en Trabajo Social y Comunitario</h3><p class="program-description">Intervención social, comunitaria y proyectos de impacto.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div><a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Auxiliar%20en%20Trabajo%20Social%20y%20Comunitario*" class="program-inscribe-btn" target="_blank" rel="noopener">💬 Inscribirme</a></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image"><img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=600&q=80" alt="" loading="lazy"><span class="program-number">9</span><span class="program-discount-tag">🔥 -70%</span><div class="program-icon-circle">🚜</div></div>
+                    <div class="program-body"><div class="program-category">Industrial</div><h3 class="program-title">Maquinaria Pesada</h3><p class="program-description">Operación de retroexcavadoras, bulldozers y equipos pesados.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div><a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Maquinaria%20Pesada*" class="program-inscribe-btn" target="_blank" rel="noopener">💬 Inscribirme</a></div>
+                </div>
+                <div class="program-card">
+                    <div class="program-image"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" alt="" loading="lazy"><span class="program-number">10</span><span class="program-discount-tag">🔥 -70%</span><div class="program-icon-circle">🎓</div></div>
+                    <div class="program-body"><div class="program-category">Educación Básica</div><h3 class="program-title">Bachillerato Flexible</h3><p class="program-description">Termina tu bachillerato con horarios adaptables a tu vida.</p><div class="program-meta"><span class="program-meta-item">⏱️ Flexible</span><span class="program-meta-item">🎓 Diploma</span></div><a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20el%20programa%20de%20*Bachillerato%20Flexible*" class="program-inscribe-btn" target="_blank" rel="noopener">💬 Inscribirme</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="programs-cta reveal">
+                <a href="#becas" class="btn btn-yellow">🎁 Ver Becas y Descuentos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BECAS Y DESCUENTOS DESTACADOS -->
+    <section class="scholarships" id="becas">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">💰 Becas Disponibles</span>
+                <h2 class="section-title">Becas <span class="yellow-text">y Descuentos</span> Especiales</h2>
+                <p class="section-subtitle">¡Aprovecha hasta el 100% de descuento en tu matrícula! Participa y obtén tu beca</p>
+            </div>
+
+            <div class="scholarships-grid">
+                <div class="scholarship-card reveal reveal-delay-1">
+                    <div class="scholarship-percent">50%</div>
+                    <div class="scholarship-label">Descuento</div>
+                    <p class="scholarship-description">Beca básica disponible para todos los estudiantes que se inscriban en el período de matrículas</p>
+                </div>
+
+                <div class="scholarship-card reveal reveal-delay-2">
+                    <div class="scholarship-percent">60%</div>
+                    <div class="scholarship-label">Descuento</div>
+                    <p class="scholarship-description">Beca intermedia para estudiantes destacados o con vinculaciones especiales</p>
+                </div>
+
+                <div class="scholarship-card reveal reveal-delay-3">
+                    <div class="scholarship-percent">70%</div>
+                    <div class="scholarship-label">Descuento</div>
+                    <p class="scholarship-description">Beca avanzada para estudiantes con excelente desempeño y compromiso académico</p>
+                </div>
+
+                <div class="scholarship-card premium reveal reveal-delay-4">
+                    <span class="scholarship-badge-top">⭐ Premium</span>
+                    <div class="scholarship-percent">100%</div>
+                    <div class="scholarship-label">¡Beca Total!</div>
+                    <p class="scholarship-description">Participa en el sorteo de becas totales con cobertura completa de tu programa</p>
+                </div>
+            </div>
+
+            <!-- How to Apply -->
+            <div class="scholarship-how-to reveal">
+                <h3><span class="icon">📋</span>¿Cómo Aplicar a las Becas?</h3>
+
+                <div class="steps-grid">
+                    <div class="apply-step">
+                        <div class="apply-step-number">1</div>
+                        <h4>Contáctanos</h4>
+                        <p>Escribenos por WhatsApp o visita nuestra sede en Barrio Miraflores</p>
+                    </div>
+                    <div class="apply-step">
+                        <div class="apply-step-number">2</div>
+                        <h4>Diligencia tu Solicitud</h4>
+                        <p>Completa el formulario de inscripción y solicitud de beca</p>
+                    </div>
+                    <div class="apply-step">
+                        <div class="apply-step-number">3</div>
+                        <h4>Entrega Documentos</h4>
+                        <p>Adjunta los documentos requeridos para tu evaluación</p>
+                    </div>
+                    <div class="apply-step">
+                        <div class="apply-step-number">4</div>
+                        <h4>¡Recibe tu Beca!</h4>
+                        <p>Confirma tu inscripción y comienza tu formación con beca</p>
+                    </div>
+                </div>
+
+                <div class="scholarship-requirements">
+                    <h4><span>📄</span> Requisitos Generales</h4>
+                    <ul>
+                        <li>Cédula de ciudadanía o documento de identidad</li>
+                        <li>Fotografías tamaño documento (2)</li>
+                        <li>Certificados académicos previos (si aplica)</li>
+                        <li>Carta o motivación de aspirar a la beca</li>
+                        <li>Inscripción dentro del período (2 al 20 de mayo)</li>
+                    </ul>
+                </div>
+
+                <div class="scholarship-cta-area">
+                    <p><strong>¡No esperes más! Las becas son por orden de inscripción</strong></p>
+                    <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20aplicar%20a%20una%20*beca%20o%20descuento*%20de%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander%20-%20Sede%20Tib%C3%BA.%20Por%20favor%20env%C3%ADenme%20la%20informaci%C3%B3n%20completa%20sobre%20los%20requisitos%20y%20el%20proceso." class="btn btn-green" target="_blank" rel="noopener" style="font-size: 1rem;">
+                        💬 Solicitar Mi Beca Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- About -->
     <section class="about section" id="nosotros">
@@ -1472,7 +2164,7 @@
         </div>
     </section>
 
-    <!-- Image Gallery -->
+    <!-- Gallery -->
     <section class="gallery">
         <div class="container">
             <div class="section-header reveal">
@@ -1489,7 +2181,6 @@
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=800&q=80" alt="" loading="lazy"><div class="gallery-item-overlay">📖 Biblioteca</div></div>
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80" alt="" loading="lazy"><div class="gallery-item-overlay">🤝 Trabajo en equipo</div></div>
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&q=80" alt="" loading="lazy"><div class="gallery-item-overlay">✨ Aprendizaje activo</div></div>
-                <!-- Duplicates -->
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80" alt="" loading="lazy"><div class="gallery-item-overlay">📚 Aulas modernas</div></div>
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=800&q=80" alt="" loading="lazy"><div class="gallery-item-overlay">💻 Sala de cómputo</div></div>
                 <div class="gallery-item"><img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=800&q=80" alt="" loading="lazy"><div class="gallery-item-overlay">🎓 Graduaciones</div></div>
@@ -1517,285 +2208,6 @@
                 <div class="value-card reveal reveal-delay-6"><span class="value-emoji">🔗</span><h4>Cooperación</h4><p>Trabajo en equipo</p></div>
                 <div class="value-card reveal reveal-delay-7"><span class="value-emoji">🚀</span><h4>Superación</h4><p>Mejoramiento constante</p></div>
                 <div class="value-card reveal reveal-delay-8"><span class="value-emoji">⚖️</span><h4>Ética</h4><p>Honestidad y principios</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Programs - Técnicas Laborales -->
-    <section class="programs section" id="programas">
-        <div class="container">
-            <div class="section-header programs-hero-title reveal">
-                <span class="section-label">Oferta Académica</span>
-                <h2 class="section-title">Técnicas Laborales <span class="highlight-yellow">Por Competencias</span></h2>
-                <p class="section-subtitle">¡Estudia, transfórmate y construye tu futuro!</p>
-            </div>
-        </div>
-
-        <div class="programs-carousel-wrapper reveal">
-            <div class="programs-carousel" id="programsCarousel">
-
-                <!-- 1. Auxiliar Administrativo -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="Auxiliar Administrativo" loading="lazy">
-                        <span class="program-number">1</span>
-                        <div class="program-icon-circle">📋</div>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-category">Administración</div>
-                        <h3 class="program-title">Auxiliar Administrativo</h3>
-                        <p class="program-description">Gestión documental, atención al cliente y manejo de oficina moderna.</p>
-                        <div class="program-meta">
-                            <span class="program-meta-item">⏱️ Técnica</span>
-                            <span class="program-meta-item">🎓 Certificado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Auxiliar Contable y Financiero -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="Auxiliar Contable" loading="lazy">
-                        <span class="program-number">2</span>
-                        <div class="program-icon-circle">📊</div>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-category">Finanzas</div>
-                        <h3 class="program-title">Auxiliar Contable y Financiero</h3>
-                        <p class="program-description">Contabilidad, nómina, tributación y software contable.</p>
-                        <div class="program-meta">
-                            <span class="program-meta-item">⏱️ Técnica</span>
-                            <span class="program-meta-item">🎓 Certificado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 3. Atención Primera Infancia -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1587653263995-422546a7a569?w=600&q=80" alt="Primera Infancia" loading="lazy">
-                        <span class="program-number">3</span>
-                        <div class="program-icon-circle">👶</div>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-category">Educación</div>
-                        <h3 class="program-title">Atención a la Primera Infancia</h3>
-                        <p class="program-description">Cuidado, educación y desarrollo integral en niños menores.</p>
-                        <div class="program-meta">
-                            <span class="program-meta-item">⏱️ Técnica</span>
-                            <span class="program-meta-item">🎓 Certificado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 4. Salud Ocupacional -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80" alt="Salud Ocupacional" loading="lazy">
-                        <span class="program-number">4</span>
-                        <div class="program-icon-circle">⛑️</div>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-category">SG-SST</div>
-                        <h3 class="program-title">Salud Ocupacional</h3>
-                        <p class="program-description">Sistema de gestión de seguridad y salud en el trabajo.</p>
-                        <div class="program-meta">
-                            <span class="program-meta-item">⏱️ Técnica</span>
-                            <span class="program-meta-item">🎓 Certificado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 5. Belleza Integral -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="Belleza Integral" loading="lazy">
-                        <span class="program-number">5</span>
-                        <div class="program-icon-circle">💇</div>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-category">Belleza</div>
-                        <h3 class="program-title">Belleza Integral</h3>
-                        <p class="program-description">Estética facial, corporal, peluquería y maquillaje profesional.</p>
-                        <div class="program-meta">
-                            <span class="program-meta-item">⏱️ Técnica</span>
-                            <span class="program-meta-item">🎓 Certificado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. Servicios Farmacéuticos -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?w=600&q=80" alt="Servicios Farmacéuticos" loading="lazy">
-                        <span class="program-number">6</span>
-                        <div class="program-icon-circle">💊</div>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-category">Salud</div>
-                        <h3 class="program-title">Servicios Farmacéuticos</h3>
-                        <p class="program-description">Dispensación de medicamentos y atención farmacéutica integral.</p>
-                        <div class="program-meta">
-                            <span class="program-meta-item">⏱️ Técnica</span>
-                            <span class="program-meta-item">🎓 Certificado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. Auxiliar en Enfermería -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="Enfermería" loading="lazy">
-                        <span class="program-number">7</span>
-                        <div class="program-icon-circle">💉</div>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-category">Salud</div>
-                        <h3 class="program-title">Auxiliar en Enfermería</h3>
-                        <p class="program-description">Cuidado del paciente, primeros auxilios y atención clínica.</p>
-                        <div class="program-meta">
-                            <span class="program-meta-item">⏱️ Técnica</span>
-                            <span class="program-meta-item">🎓 Certificado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. Trabajo Social y Comunitario -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="Trabajo Social" loading="lazy">
-                        <span class="program-number">8</span>
-                        <div class="program-icon-circle">👥</div>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-category">Social</div>
-                        <h3 class="program-title">Auxiliar en Trabajo Social y Comunitario</h3>
-                        <p class="program-description">Intervención social, comunitaria y proyectos de impacto.</p>
-                        <div class="program-meta">
-                            <span class="program-meta-item">⏱️ Técnica</span>
-                            <span class="program-meta-item">🎓 Certificado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 9. Maquinaria Pesada -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=600&q=80" alt="Maquinaria Pesada" loading="lazy">
-                        <span class="program-number">9</span>
-                        <div class="program-icon-circle">🚜</div>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-category">Industrial</div>
-                        <h3 class="program-title">Maquinaria Pesada</h3>
-                        <p class="program-description">Operación de retroexcavadoras, bulldozers y equipos pesados.</p>
-                        <div class="program-meta">
-                            <span class="program-meta-item">⏱️ Técnica</span>
-                            <span class="program-meta-item">🎓 Certificado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10. Bachillerato Flexible -->
-                <div class="program-card">
-                    <div class="program-image">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" alt="Bachillerato Flexible" loading="lazy">
-                        <span class="program-number">10</span>
-                        <div class="program-icon-circle">🎓</div>
-                    </div>
-                    <div class="program-body">
-                        <div class="program-category">Educación Básica</div>
-                        <h3 class="program-title">Bachillerato Flexible</h3>
-                        <p class="program-description">Termina tu bachillerato con horarios adaptables a tu vida.</p>
-                        <div class="program-meta">
-                            <span class="program-meta-item">⏱️ Flexible</span>
-                            <span class="program-meta-item">🎓 Diploma</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- DUPLICATES FOR INFINITE SCROLL -->
-                <div class="program-card">
-                    <div class="program-image"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80" alt="" loading="lazy"><span class="program-number">1</span><div class="program-icon-circle">📋</div></div>
-                    <div class="program-body"><div class="program-category">Administración</div><h3 class="program-title">Auxiliar Administrativo</h3><p class="program-description">Gestión documental, atención al cliente y manejo de oficina moderna.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div></div>
-                </div>
-                <div class="program-card">
-                    <div class="program-image"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&q=80" alt="" loading="lazy"><span class="program-number">2</span><div class="program-icon-circle">📊</div></div>
-                    <div class="program-body"><div class="program-category">Finanzas</div><h3 class="program-title">Auxiliar Contable y Financiero</h3><p class="program-description">Contabilidad, nómina, tributación y software contable.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div></div>
-                </div>
-                <div class="program-card">
-                    <div class="program-image"><img src="https://images.unsplash.com/photo-1587653263995-422546a7a569?w=600&q=80" alt="" loading="lazy"><span class="program-number">3</span><div class="program-icon-circle">👶</div></div>
-                    <div class="program-body"><div class="program-category">Educación</div><h3 class="program-title">Atención a la Primera Infancia</h3><p class="program-description">Cuidado, educación y desarrollo integral en niños menores.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div></div>
-                </div>
-                <div class="program-card">
-                    <div class="program-image"><img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&q=80" alt="" loading="lazy"><span class="program-number">4</span><div class="program-icon-circle">⛑️</div></div>
-                    <div class="program-body"><div class="program-category">SG-SST</div><h3 class="program-title">Salud Ocupacional</h3><p class="program-description">Sistema de gestión de seguridad y salud en el trabajo.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div></div>
-                </div>
-                <div class="program-card">
-                    <div class="program-image"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80" alt="" loading="lazy"><span class="program-number">5</span><div class="program-icon-circle">💇</div></div>
-                    <div class="program-body"><div class="program-category">Belleza</div><h3 class="program-title">Belleza Integral</h3><p class="program-description">Estética facial, corporal, peluquería y maquillaje profesional.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div></div>
-                </div>
-                <div class="program-card">
-                    <div class="program-image"><img src="https://images.unsplash.com/photo-1576602976047-174e57a47881?w=600&q=80" alt="" loading="lazy"><span class="program-number">6</span><div class="program-icon-circle">💊</div></div>
-                    <div class="program-body"><div class="program-category">Salud</div><h3 class="program-title">Servicios Farmacéuticos</h3><p class="program-description">Dispensación de medicamentos y atención farmacéutica integral.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div></div>
-                </div>
-                <div class="program-card">
-                    <div class="program-image"><img src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=600&q=80" alt="" loading="lazy"><span class="program-number">7</span><div class="program-icon-circle">💉</div></div>
-                    <div class="program-body"><div class="program-category">Salud</div><h3 class="program-title">Auxiliar en Enfermería</h3><p class="program-description">Cuidado del paciente, primeros auxilios y atención clínica.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div></div>
-                </div>
-                <div class="program-card">
-                    <div class="program-image"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="" loading="lazy"><span class="program-number">8</span><div class="program-icon-circle">👥</div></div>
-                    <div class="program-body"><div class="program-category">Social</div><h3 class="program-title">Auxiliar en Trabajo Social y Comunitario</h3><p class="program-description">Intervención social, comunitaria y proyectos de impacto.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div></div>
-                </div>
-                <div class="program-card">
-                    <div class="program-image"><img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=600&q=80" alt="" loading="lazy"><span class="program-number">9</span><div class="program-icon-circle">🚜</div></div>
-                    <div class="program-body"><div class="program-category">Industrial</div><h3 class="program-title">Maquinaria Pesada</h3><p class="program-description">Operación de retroexcavadoras, bulldozers y equipos pesados.</p><div class="program-meta"><span class="program-meta-item">⏱️ Técnica</span><span class="program-meta-item">🎓 Certificado</span></div></div>
-                </div>
-                <div class="program-card">
-                    <div class="program-image"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80" alt="" loading="lazy"><span class="program-number">10</span><div class="program-icon-circle">🎓</div></div>
-                    <div class="program-body"><div class="program-category">Educación Básica</div><h3 class="program-title">Bachillerato Flexible</h3><p class="program-description">Termina tu bachillerato con horarios adaptables a tu vida.</p><div class="program-meta"><span class="program-meta-item">⏱️ Flexible</span><span class="program-meta-item">🎓 Diploma</span></div></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="programs-cta reveal">
-                <a href="#matriculas" class="btn btn-yellow">📚 Ver Todos los Programas</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- MATRÍCULAS Y BECAS -->
-    <section class="enrollment-info" id="matriculas">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Inscríbete Ya</span>
-                <h2 class="section-title">Matrículas & Becas Estudiantiles</h2>
-                <p class="section-subtitle">¡Aprovecha nuestras becas y comienza tu formación!</p>
-            </div>
-            <div class="enrollment-cards">
-                <div class="enroll-info-card reveal reveal-delay-1">
-                    <div class="enroll-info-icon">📅</div>
-                    <h4>Matrículas</h4>
-                    <div class="big-value">2-20</div>
-                    <p><strong>MAYO</strong><br>Del 2 al 20 de mayo</p>
-                </div>
-                <div class="enroll-info-card featured reveal reveal-delay-2">
-                    <div class="enroll-info-icon">🏆</div>
-                    <h4>Becas Totales</h4>
-                    <div class="big-value">100%</div>
-                    <p>¡Participa por las becas totales con descuento!</p>
-                </div>
-                <div class="enroll-info-card reveal reveal-delay-3">
-                    <div class="enroll-info-icon">🎓</div>
-                    <h4>Becas Estudiantil</h4>
-                    <div class="scholarship-badges">
-                        <span class="scholarship-badge">70% OFF</span>
-                        <span class="scholarship-badge">60% OFF</span>
-                        <span class="scholarship-badge">50% OFF</span>
-                    </div>
-                    <p style="margin-top:14px;">Múltiples descuentos disponibles</p>
-                </div>
             </div>
         </div>
     </section>
@@ -1844,7 +2256,7 @@
                 <div class="step-card reveal reveal-delay-4"><div class="step-number">4</div><h4>¡Matricúlate!</h4><p>Completa el proceso y comienza tu formación.</p></div>
             </div>
             <div style="text-align: center; margin-top: 35px;" class="reveal">
-                <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20información%20sobre%20matrículas" class="btn btn-yellow" target="_blank" rel="noopener">💬 Inscríbete por WhatsApp</a>
+                <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20inscribirme%20en%20la%20Corporaci%C3%B3n%20Educativa%20General%20Santander" class="btn btn-yellow" target="_blank" rel="noopener">💬 Inscríbete por WhatsApp</a>
             </div>
         </div>
     </section>
@@ -1870,7 +2282,7 @@
             <div class="section-header reveal">
                 <span class="section-label">Dudas Frecuentes</span>
                 <h2 class="section-title">Preguntas Frecuentes</h2>
-                <p class="section-subtitle">Resolvemos tus dudas sobre nuestros programas</p>
+                <p class="section-subtitle">Resolvemos tus dudas sobre nuestros programas y becas</p>
             </div>
             <div class="faq-list">
                 <div class="faq-item reveal reveal-delay-1">
@@ -1878,12 +2290,12 @@
                     <div class="faq-answer"><p>Necesitas presentar tu cédula de ciudadanía, fotografías tamaño carné, y los certificados académicos previos según el programa al que desees inscribirte.</p></div>
                 </div>
                 <div class="faq-item reveal reveal-delay-2">
-                    <button class="faq-question">¿La certificación es válida en todo el país?<span class="faq-toggle">+</span></button>
-                    <div class="faq-answer"><p>Sí, contamos con la Resolución 005730 del 17 de diciembre de 2018 expedida por la Secretaría de Educación Departamental, garantizando validez oficial en todo Colombia.</p></div>
+                    <button class="faq-question">¿Cómo aplico para las becas del 50%, 60%, 70% o 100%?<span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>Las becas se asignan durante el período de matrículas (2-20 de mayo). Contáctanos por WhatsApp al 313 320 2324 para conocer los requisitos específicos. Las becas se otorgan por orden de inscripción y según evaluación de cada caso. La beca del 100% se otorga mediante sorteo entre los inscritos.</p></div>
                 </div>
                 <div class="faq-item reveal reveal-delay-3">
-                    <button class="faq-question">¿Cómo aplico para las becas?<span class="faq-toggle">+</span></button>
-                    <div class="faq-answer"><p>Las becas del 50%, 60%, 70% y 100% se asignan durante el período de matrículas (2-20 de mayo). Contáctanos para conocer los requisitos específicos y participar.</p></div>
+                    <button class="faq-question">¿La certificación es válida en todo el país?<span class="faq-toggle">+</span></button>
+                    <div class="faq-answer"><p>Sí, contamos con la Resolución 005730 del 17 de diciembre de 2018 expedida por la Secretaría de Educación Departamental, garantizando validez oficial en todo Colombia.</p></div>
                 </div>
                 <div class="faq-item reveal reveal-delay-4">
                     <button class="faq-question">¿Cuántas sedes tienen?<span class="faq-toggle">+</span></button>
@@ -1907,7 +2319,7 @@
             <div class="cta-box reveal">
                 <h2>¡Estudia, Transfórmate y <span class="cta-yellow-highlight">Construye tu Futuro!</span> 🎓</h2>
                 <p>No dejes pasar esta oportunidad. Matrículas abiertas con becas hasta del 100%.</p>
-                <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20información%20sobre%20matrículas" class="btn btn-primary" target="_blank" rel="noopener">💬 Quiero Inscribirme Ahora</a>
+                <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20información%20sobre%20matrículas%20y%20becas" class="btn btn-primary" target="_blank" rel="noopener">💬 Quiero Inscribirme Ahora</a>
             </div>
         </div>
     </section>
@@ -1953,7 +2365,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <div class="footer-brand-header">
-                        <img src="https://res.cloudinary.com/dipv76dpn/image/upload/v1778763244/b_Quiero_sacar_el_logo.png_m8hmqx.png" alt="Logo" class="footer-logo" loading="lazy">
+                        <img src="https://res.cloudinary.com/dipv76dpn/image/upload/v1779288734/b_Quiero_sacar_el_logo.png_2_ous6d0.jpg" alt="Logo" class="footer-logo" loading="lazy">
                         <h3>Corporación Educativa<br>General Santander S.A.S</h3>
                     </div>
                     <p>Educación para el Trabajo y el Desarrollo Humano.</p>
@@ -1969,9 +2381,9 @@
                     <h4>Navegación</h4>
                     <ul>
                         <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#nosotros">Nosotros</a></li>
                         <li><a href="#programas">Programas</a></li>
-                        <li><a href="#matriculas">Matrículas</a></li>
+                        <li><a href="#becas">Becas</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -2006,7 +2418,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20información" class="whatsapp-float" target="_blank" rel="noopener">
+    <a href="https://wa.me/573133202324?text=Hola%2C%20quiero%20información%20sobre%20matrículas%20y%20becas" class="whatsapp-float" target="_blank" rel="noopener">
         <span class="whatsapp-bubble">¿Necesitas ayuda? 👋</span>
         <span class="whatsapp-btn">💬</span>
     </a>
@@ -2126,6 +2538,54 @@
             });
         }, { threshold: 0 });
         carousels.forEach(c => carouselObserver.observe(c));
+
+        // ===== COUNTDOWN TIMER =====
+        // Fecha de cierre: 20 de mayo del año actual o próximo
+        function getDeadline() {
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            let deadline = new Date(currentYear, 4, 20, 23, 59, 59); // Mes 4 = Mayo (0-indexed)
+            
+            // Si ya pasó el 20 de mayo de este año, usar el del próximo año
+            if (now > deadline) {
+                deadline = new Date(currentYear + 1, 4, 20, 23, 59, 59);
+            }
+            return deadline;
+        }
+
+        const deadline = getDeadline();
+        const cdDays = document.getElementById('cdDays');
+        const cdHours = document.getElementById('cdHours');
+        const cdMinutes = document.getElementById('cdMinutes');
+        const cdSeconds = document.getElementById('cdSeconds');
+        const countdownGrid = document.getElementById('countdownGrid');
+
+        function pad(num) {
+            return String(num).padStart(2, '0');
+        }
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = deadline.getTime() - now;
+
+            if (distance < 0) {
+                countdownGrid.innerHTML = '<div class="countdown-expired">¡Las matrículas han cerrado! Contáctanos para próximas convocatorias</div>';
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (cdDays) cdDays.textContent = pad(days);
+            if (cdHours) cdHours.textContent = pad(hours);
+            if (cdMinutes) cdMinutes.textContent = pad(minutes);
+            if (cdSeconds) cdSeconds.textContent = pad(seconds);
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
