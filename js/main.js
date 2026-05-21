@@ -298,11 +298,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function getDeadline() {
     const now = new Date();
     const currentYear = now.getFullYear();
-    let deadline = new Date(currentYear, 4, 20, 23, 59, 59); // Mes 4 = Mayo (0-indexed)
+    let deadline = new Date(currentYear, 4, 31, 23, 59, 59); // Mes 4 = Mayo (0-indexed)
     
-    // Si ya pasó el 20 de mayo de este año, usar el del próximo año
+    // Si ya pasó el 31 de mayo de este año, usar el del próximo año
     if (now > deadline) {
-      deadline = new Date(currentYear + 1, 4, 20, 23, 59, 59);
+      deadline = new Date(currentYear + 1, 4, 31, 23, 59, 59);
     }
     return deadline;
   }
